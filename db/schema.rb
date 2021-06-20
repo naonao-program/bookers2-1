@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 2021_06_18_133425) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["book_id", "user_id"], name: "index_favorites_on_book_id_and_user_id", unique: true
     t.index ["book_id"], name: "index_favorites_on_book_id"
     t.index ["user_id"], name: "index_favorites_on_user_id"
   end
