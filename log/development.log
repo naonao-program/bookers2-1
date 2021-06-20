@@ -1319,3 +1319,216 @@ Processing by UsersController#show as HTML
 Completed 200 OK in 660ms (Views: 625.5ms | ActiveRecord: 2.5ms)
 
 
+Started GET "/users/1" for 112.70.238.138 at 2021-06-20 14:25:55 +0000
+Cannot render console from 112.70.238.138! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:6
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_profile.html.erb (308.7ms)
+  Rendered books/_newform.html.erb (24.6ms)
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:25
+  [1m[36mFavorite Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."book_id" = ? AND "favorites"."user_id" = ? LIMIT ?[0m  [["book_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/models/book.rb:12
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."book_id" = ?[0m  [["book_id", 1]]
+  ↳ app/views/users/show.html.erb:44
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "book_comments" WHERE "book_comments"."book_id" = ?[0m  [["book_id", 1]]
+  ↳ app/views/users/show.html.erb:49
+  Rendered users/show.html.erb within layouts/application (363.5ms)
+Completed 200 OK in 609ms (Views: 564.1ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/users/1" for 112.70.238.138 at 2021-06-20 14:33:32 +0000
+Cannot render console from 112.70.238.138! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:6
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_profile.html.erb (4.4ms)
+  Rendered books/_newform.html.erb (3.5ms)
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  [1m[36mFavorite Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."book_id" = ? AND "favorites"."user_id" = ? LIMIT ?[0m  [["book_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/models/book.rb:12
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."book_id" = ?[0m  [["book_id", 1]]
+  ↳ app/views/books/_book.html.erb:35
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "book_comments" WHERE "book_comments"."book_id" = ?[0m  [["book_id", 1]]
+  ↳ app/views/books/_book.html.erb:40
+  Rendered books/_book.html.erb (17.4ms)
+  Rendered users/show.html.erb within layouts/application (30.7ms)
+Completed 200 OK in 178ms (Views: 169.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 112.70.238.138 at 2021-06-20 14:34:19 +0000
+Cannot render console from 112.70.238.138! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 79ms (Views: 78.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 112.70.238.138 at 2021-06-20 14:34:20 +0000
+Cannot render console from 112.70.238.138! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (1.4ms)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:22
+Completed 200 OK in 140ms (Views: 138.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/books" for 112.70.238.138 at 2021-06-20 14:34:23 +0000
+Cannot render console from 112.70.238.138! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BooksController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering books/index.html.erb within layouts/application
+  Rendered users/_profile.html.erb (2.7ms)
+  Rendered books/_newform.html.erb (3.3ms)
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/_book.html.erb:15
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:18
+  [1m[36mFavorite Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."book_id" = ? AND "favorites"."user_id" = ? LIMIT ?[0m  [["book_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/models/book.rb:12
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."book_id" = ?[0m  [["book_id", 1]]
+  ↳ app/views/books/_book.html.erb:35
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "book_comments" WHERE "book_comments"."book_id" = ?[0m  [["book_id", 1]]
+  ↳ app/views/books/_book.html.erb:40
+  Rendered books/_book.html.erb (21.0ms)
+  Rendered books/index.html.erb within layouts/application (32.3ms)
+Completed 200 OK in 136ms (Views: 130.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/books" for 112.70.238.138 at 2021-06-20 14:34:50 +0000
+Cannot render console from 112.70.238.138! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BooksController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering books/index.html.erb within layouts/application
+  Rendered users/_profile.html.erb (1.2ms)
+  Rendered books/_newform.html.erb (1.6ms)
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/_book.html.erb:15
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:18
+  [1m[36mFavorite Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."book_id" = ? AND "favorites"."user_id" = ? LIMIT ?[0m  [["book_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/models/book.rb:12
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."book_id" = ?[0m  [["book_id", 1]]
+  ↳ app/views/books/_book.html.erb:35
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "book_comments" WHERE "book_comments"."book_id" = ?[0m  [["book_id", 1]]
+  ↳ app/views/books/_book.html.erb:40
+  Rendered books/_book.html.erb (11.4ms)
+  Rendered books/index.html.erb within layouts/application (22.1ms)
+Completed 200 OK in 104ms (Views: 100.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/books" for 112.70.238.138 at 2021-06-20 14:34:52 +0000
+Cannot render console from 112.70.238.138! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BooksController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering books/index.html.erb within layouts/application
+  Rendered users/_profile.html.erb (2.7ms)
+  Rendered books/_newform.html.erb (2.3ms)
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/_book.html.erb:15
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:18
+  [1m[36mFavorite Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."book_id" = ? AND "favorites"."user_id" = ? LIMIT ?[0m  [["book_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/models/book.rb:12
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."book_id" = ?[0m  [["book_id", 1]]
+  ↳ app/views/books/_book.html.erb:35
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "book_comments" WHERE "book_comments"."book_id" = ?[0m  [["book_id", 1]]
+  ↳ app/views/books/_book.html.erb:40
+  Rendered books/_book.html.erb (13.2ms)
+  Rendered books/index.html.erb within layouts/application (21.5ms)
+Completed 200 OK in 97ms (Views: 92.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users" for 112.70.238.138 at 2021-06-20 14:35:18 +0000
+Cannot render console from 112.70.238.138! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/_profile.html.erb (230.3ms)
+  Rendered books/_newform.html.erb (13.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:24
+  Rendered users/index.html.erb within layouts/application (250.7ms)
+Completed 200 OK in 581ms (Views: 553.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/users/1" for 112.70.238.138 at 2021-06-20 14:35:21 +0000
+Cannot render console from 112.70.238.138! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:6
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_profile.html.erb (1.9ms)
+  Rendered books/_newform.html.erb (1.7ms)
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/books/_book.html.erb:15
+  [1m[36mFavorite Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."book_id" = ? AND "favorites"."user_id" = ? LIMIT ?[0m  [["book_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/models/book.rb:12
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."book_id" = ?[0m  [["book_id", 1]]
+  ↳ app/views/books/_book.html.erb:35
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "book_comments" WHERE "book_comments"."book_id" = ?[0m  [["book_id", 1]]
+  ↳ app/views/books/_book.html.erb:40
+  Rendered books/_book.html.erb (26.9ms)
+  Rendered users/show.html.erb within layouts/application (35.1ms)
+Completed 200 OK in 221ms (Views: 210.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/books/1" for 112.70.238.138 at 2021-06-20 14:35:23 +0000
+Cannot render console from 112.70.238.138! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:8
+  Rendering books/show.html.erb within layouts/application
+  Rendered users/_profile.html.erb (2.3ms)
+  Rendered books/_newform.html.erb (1.7ms)
+  [1m[36mFavorite Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."book_id" = ? AND "favorites"."user_id" = ? LIMIT ?[0m  [["book_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/models/book.rb:12
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."book_id" = ?[0m  [["book_id", 1]]
+  ↳ app/views/books/show.html.erb:38
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "book_comments" WHERE "book_comments"."book_id" = ?[0m  [["book_id", 1]]
+  ↳ app/views/books/show.html.erb:45
+  [1m[36mBookComment Load (0.1ms)[0m  [1m[34mSELECT "book_comments".* FROM "book_comments" WHERE "book_comments"."book_id" = ?[0m  [["book_id", 1]]
+  ↳ app/views/books/show.html.erb:60
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/books/show.html.erb:64
+  Rendered books/show.html.erb within layouts/application (27.1ms)
+Completed 200 OK in 140ms (Views: 116.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 112.70.238.138 at 2021-06-20 14:35:28 +0000
+Cannot render console from 112.70.238.138! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:22
+Completed 200 OK in 134ms (Views: 133.3ms | ActiveRecord: 0.3ms)
+
+
