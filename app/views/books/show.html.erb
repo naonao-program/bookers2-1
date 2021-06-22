@@ -81,7 +81,7 @@
 			</table>
 
 			<div class="post-comment">
-				<%= form_with [@book, @book_comment] do |f| %>
+				<%= form_with model: [@book, @book_comment] do |f| %>
 				<%= f.text_area :comment, size: "80x10" %><br>
 				<!-- :の後はカラム名 -->
 				<%= f.submit "送信する" %>
